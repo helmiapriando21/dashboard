@@ -1,0 +1,925 @@
+<!DOCTYPE html>
+<html lang="en">
+  <!--Kasih Warna BG, sesuaiin navbar dan footer, Masukkan Data, Halaman Kinerja Industri, Data Per Unit Kerja, tiap table dikasih ubah 2-50)-->
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Indikator Global</title>
+
+    <link
+      rel="stylesheet"
+      href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css"
+    />
+
+    <link
+      rel="stylesheet"
+      href="plugins/tempusdominus-bootstrap-4/css/tempusdominus-bootstrap-4.min.css"
+    />
+
+    <link
+      rel="stylesheet"
+      href="plugins/icheck-bootstrap/icheck-bootstrap.min.css"
+    />
+
+    <link rel="stylesheet" href="plugins/jqvmap/jqvmap.min.css" />
+
+    <link
+      rel="stylesheet"
+      href="plugins/overlayScrollbars/css/OverlayScrollbars.min.css"
+    />
+
+    <link rel="stylesheet" href="plugins/daterangepicker/daterangepicker.css" />
+
+    <link rel="stylesheet" href="plugins/summernote/summernote-bs4.min.css" />
+
+    <link rel="stylesheet" href="style.css" />
+
+    <!-- Google Font: Source Sans Pro -->
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback"
+    />
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="plugins/fontawesome-free/css/all.min.css" />
+    <!-- uPlot -->
+    <!-- <link rel="stylesheet" href="plugins/uplot/uPlot.min.css" /> -->
+    <!-- Theme style -->
+    <link rel="stylesheet" href="dist/css/adminlte.min.css" />
+  </head>
+
+ <!--Logo & Header-->
+  <body
+    class="bg-light hold-transition sidebar-collapse layout-fixed text-center">
+
+    <div class="wrapper pb-2 p-3 bg-white">
+      <div class="mx-auto d-flex align-items-center">
+        <a href="#" class="nav-link"><img src="logo.png" class="" /></a>
+        <h1 class="m-0 text-bold px-4">
+          Dashboard Pimpinan Kementerian Perindustrian
+        </h1>
+      </div>
+
+      <!--Backgroundnya diwarnain sesuai AdminLTE TIDAK PERLU ADA DARK MODE dan text inggrisnya dimiringin-->
+      <nav
+        class="main-header navbar navbar-expand navbar-light bg-white px-3 mx-0"
+      >
+        <ul class="navbar-nav">
+          <li class="nav-item d-none d-sm-inline-block indikator-global active">
+            <a href="#" class="nav-link">Indikator Global</a>
+          </li>
+          <li class="nav-item d-none d-sm-inline-block indikator-nasional">
+            <a href="indikatornasional.html" class="nav-link"
+              >Indikator Nasional</a
+            >
+          </li>
+          <li class="nav-item d-none d-sm-inline-block kinerja-industri">
+            <a href="kinerjaindustri.html" class="nav-link">Kinerja Industri</a>
+          </li>
+          <li class="nav-item d-none d-sm-inline-block data-per-unit-kerja">
+            <a href="dataperunitkerja.html" class="nav-link"
+              >Data Per Unit Kerja</a
+            >
+          </li>
+          <li class="nav-item d-none d-sm-inline-block isu">
+            <a href="isu.html" class="nav-link">Isu</a>
+          </li>
+          <li class="nav-item d-none d-sm-inline-block tanggapan-arahan">
+            <a href="tanggapan.html" class="nav-link">Tanggapan/Arahan</a>
+          </li>
+        </ul>
+
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item">
+            <a class="nav-link" data-widget="fullscreen" href="#" role="button">
+              <i class="fas fa-expand-arrows-alt"></i>
+            </a>
+          </li>
+        </ul>
+      </nav>
+
+      <!--Ringkasan Eksekutif-->
+      <svg xmlns="http://www.w3.org/2000/svg" class="d-none">
+        <symbol id="info-fill" viewBox="0 0 16 16">
+          <path
+            d="M8 16A8 8 0 1 0 8 0a8 8 0 0 0 0 16zm.93-9.412-1 4.705c-.07.34.029.533.304.533.194 0 .487-.07.686-.246l-.088.416c-.287.346-.92.598-1.465.598-.703 0-1.002-.422-.808-1.319l.738-3.468c.064-.293.006-.399-.287-.47l-.451-.081.082-.381 2.29-.287zM8 5.5a1 1 0 1 1 0-2 1 1 0 0 1 0 2z"
+          />
+        </symbol>
+      </svg>
+
+      <div
+        class="text-dark alert d-flex align-items-center text-justify mb-4 border rounded shadow-sm p-2 mt-4"
+        role="alert"
+        style="background-color: #FFF3CD; border-color: #ffeeba;"
+      >
+        <svg
+          class="bi flex-shrink-0 me-2"
+          role="img"
+          style="height: 40px; width: 60px"
+          aria-label="Info:"
+        >
+          <use xlink:href="#info-fill" />
+        </svg>
+        <div class="">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate
+          perferendis odio dolorum soluta quasi quaerat quas. Aliquid cum
+          voluptatum eos recusandae illo dolores, itaque reiciendis vitae earum
+          dolor, labore ipsum.
+        </div>
+      </div>
+
+      <!-- <div class="container-fluid"> cara bungkusnya menyesuaikan isinya -->
+
+      <!-- TABLE: LATEST 1 -->
+      <div class="card-body p-0 bg-white">
+        <div class="table-responsive shadow p-3 mb-2 bg-body-tertiary rounded">
+          <table class="table table-striped rounded table table-bordered m-0">
+            <thead class="">
+              <tr>
+                <th style="width: 20%;">Data</th>
+                <th style="width: 40%;" colspan="2">Global</th>
+                <th style="width: 40%;" colspan="2">Indonesia</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <!-- kotaknya di patenkan -->
+                <td></td>
+                <td>Tahun Sebelumnya</td>
+                <td>YTD</td>
+                <td>Tahun Sebelumnya</td>
+                <td>YTD</td>
+              </tr>
+              <tr>
+                <td>PDB (Triliun USD)</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>Pertumbuhan PDB(%, y-on-y)</td>
+                <td>(Tahun Sebelumnya)</td>
+                <td>Latest (Tahun) Prediksi</td>
+                <td></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>PDB PPP (USD)</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>Populasi (Juta Orang)</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>Ekspor (Juta USD)</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>Impor (Juta USD)</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>Investasi (Juta USD)</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>NTMs</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <br />
+
+      <!-- TABLE: LATEST 2&3 -->
+      <div class="d-flex justify-content-center">
+        <!-- TABLE: LATEST 2 (kurang diwarnai tabelnya) -->
+        <div class="card-body p-0 w-50 bg-white">
+          <div
+            class="table-responsive shadow p-2 mb-2 bg-body-tertiary rounded"
+          >
+            <table class="table table-striped table2 table table-bordered m-0">
+              <thead>
+                <tr>
+                  <th style="width: 60%">Negara</th>
+                  <th style="width: 40%" colspan="2">Inflasi</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Indonesia</td>
+                  <td>123</td>
+                  <td style="width: 10%">
+                    <i class="fas fa-arrow-down text-red"></i>
+                  </td>
+                </tr>
+                <tr>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <div class="" style="width: 30px"></div>
+
+        <!-- TABLE: LATEST 3 (kurang diwarnai tabelnya) -->
+        <div class="card-body p-0 bg-white w-50">
+          <div
+            class="table-responsive shadow p-2 mb-2 bg-body-tertiary rounded"
+          >
+            <table class="table table-striped table3 table table-bordered m-0">
+              <thead>
+                <tr>
+                  <th style="width: 60%">Negara</th>
+                  <th style="width: 40%" colspan="2">Suku Bunga</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Indonesia</td>
+                  <td>456</td>
+                  <td style="width: 10%">
+                    <i class="fas fa-arrow-up text-green"></i>
+                  </td>
+                </tr>
+                <tr>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+
+      <br />
+
+      <!-- Grafik Garis (ditambahin grafik tampilnya dan masih kurang cocok peletakan angkanya) -->
+      <!-- <div class="card card-info">
+        <div class="card-header">
+          <h3 class="card-title">Line Chart</h3>
+
+          <div class="card-tools">
+            <button
+              type="button"
+              class="btn btn-tool"
+              data-card-widget="collapse"
+            >
+              <i class="fas fa-minus"></i>
+            </button>
+            <button
+              type="button"
+              class="btn btn-tool"
+              data-card-widget="remove"
+            >
+              <i class="fas fa-times"></i>
+            </button>
+          </div>
+        </div>
+        <div class="card-body">
+          <div class="chart">
+            <div
+              id="lineChart"
+              style="
+                min-height: 250px;
+                height: 250px;
+                max-height: 250px;
+                max-width: 100%;
+              "
+            ></div>
+          </div>
+        </div> -->
+        <!-- /.card-body -->
+      </div>
+      <div class="card shadow bg-dark">
+        <div class="card-header border-0 mb-2">
+          <div class="d-flex justify-content-between">
+            <h3 class="card-title"><b>Harga Komoditas</b></h3>
+          </div>
+        </div>
+        <div class="card-body">
+          <div class="row">
+            <div class="col">
+              <div class="">Minyak Bumi Brent</div>
+              <div class="">($/bbl)</div>
+              <br />
+              <br />
+              <div class="row">
+                <div class="col">
+                  <div class="text-bold text-lg">
+                    1,319 <i class="fas fa-arrow-up text-success"></i>
+                  </div>
+                  <div class="">1,188</div>
+                </div>
+                <!-- ini buat grafiknya ya bang -->
+                <div class="col"></div>
+              </div>
+            </div>
+            <div class="col">
+              <div class="">Batu Bara</div>
+              <div class="">($/mt)</div>
+              <br />
+              <br />
+              <div class="row">
+                <div class="col">
+                  <div class="text-bold text-lg">
+                    274.9 <i class="fas fa-arrow-up text-success"></i>
+                  </div>
+                  <div class="">272.2</div>
+                </div>
+                <!-- ini buat grafiknya ya bang -->
+                <div class="col"></div>
+              </div>
+            </div>
+            <div class="col">
+              <div class="">Minyak Sawit</div>
+              <div class="">(MYR/mt)</div>
+              <br />
+              <br />
+              <div class="row">
+                <div class="col">
+                  <div class="text-bold text-lg">
+                    5.3 <i class="fas fa-arrow-up text-success"></i>
+                  </div>
+                  <div class="">3.7</div>
+                </div>
+                <!-- ini buat grafiknya ya bang -->
+                <div class="col"></div>
+              </div>
+            </div>
+            <div class="col">
+              <div class="">Karet</div>
+              <div class="">($/mt)</div>
+              <br />
+              <br />
+              <div class="row">
+                <div class="col">
+                  <div class="text-bold text-lg">
+                    5.9 <i class="fas fa-arrow-down text-red"></i>
+                  </div>
+                  <div class="">6.5</div>
+                </div>
+                <!-- ini buat grafiknya ya bang -->
+                <div class="col"></div>
+              </div>
+            </div>
+            <div class="col">
+              <div class="">Nikel</div>
+              <div class="">($/mt)</div>
+              <br />
+              <br />
+              <div class="row">
+                <div class="col">
+                  <div class="text-bold text-lg">
+                    1.0 <i class="fas fa-arrow-up text-success"></i>
+                  </div>
+                  <div class="">0.3</div>
+                </div>
+                <!-- ini buat grafiknya ya bang (kg-nya di hapus dan disesuaikan)-->
+                <div class="col"></div>
+              </div>
+            </div>
+            <div class="col">
+              <div class="">Emas</div>
+              <div class="">Kg</div>
+              <br />
+              <br />
+              <div class="row">
+                <div class="col">
+                  <div class="text-bold text-lg">
+                    40.1 <i class="fas fa-arrow-down text-red"></i>
+                  </div>
+                  <div class="">41.1</div>
+                </div>
+                <!-- ini buat grafiknya ya bang -->
+                <div class="col"></div>
+              </div>
+            </div>
+          </div>
+          <br />
+          <br />
+          <div class="d-flex flex-row justify-content-end">
+            <span class="mr-2">
+              <b class="text-lg mr-3">This Month</b>
+              Last Month
+            </span>
+          </div>
+        </div>
+      </div>
+
+      <br />
+
+      <!-- TABLE: LATEST 4 (teks inggrisnya di miringin) -->
+      <div class="card-body p-0 bg-white">
+        <div class="table-responsive shadow p-3 mb-2 bg-body-tertiary rounded">
+          <table class="table table-striped rounded table table-bordered m-0">
+            <thead>
+              <tr>
+                <th class="font-italic" style="width: 30%">IMD Competitivesness Rank</th>
+                <th class="font-italic" style="width: 30%">Economic Performance Rank</th>
+                <th class="font-italic" style="width: 30%">Human Capital Index</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <br />
+
+      <!-- TABLE: LATEST 5&6 -->
+      <div class="d-flex justify-content-center">
+        <!-- TABLE: LATEST 5 -->
+        <div class="card-body p-0 bg-white">
+          <div
+            class="table-responsive shadow p-2 mb-2 bg-body-tertiary rounded"
+          >
+            <table class="table table-striped table5 table table-bordered m-0">
+              <thead>
+                <tr>
+                  <th style="width: 60%">Negara</th>
+                  <th style="width: 40%" colspan="2">MVA</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Indonesia</td>
+                  <td>123</td>
+                  <td style="width: 10%">
+                    <i class="fas fa-arrow-up text-success"></i>
+                  </td>
+                </tr>
+                <tr>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <div class="" style="width: 30px"></div>
+
+        <!-- TABLE: LATEST 6 -->
+        <div class="card-body p-0 bg-white">
+          <div class="shadow p-2 mb-2 bg-body-tertiary rounded">
+            <table class="table table-striped table6 table table-bordered m-0">
+              <thead>
+                <tr>
+                  <th style="width: 60%">Negara</th>
+                  <th style="width: 40%" colspan="2">CIP Rank</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Indonesia</td>
+                  <td>456</td>
+                  <td style="width: 10%">
+                    <i class="fas fa-arrow-up text-success"></i>
+                  </td>
+                </tr>
+                <tr>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+
+      <br />
+
+      <!-- TABLE: LATEST 7&8 -->
+      <div class="d-flex justify-content-center ">
+        <!-- TABLE: LATEST 7 -->
+        <div class="card-body p-0 w-50 bg-white">
+          <div
+            class="table-responsive shadow p-2 mb-2 bg-body-tertiary rounded"
+          >
+            <table class="table table-striped table7 table table-bordered m-0">
+              <thead>
+                <tr>
+                  <th style="width: 60%">Negara</th>
+                  <th style="width: 40%" colspan="2">
+                    Partisipasi dalam GVC <br />
+                    (%)
+                  </th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Indonesia</td>
+                  <td>123</td>
+                  <td style="width: 10%">
+                    <i class="fas fa-arrow-down text-red"></i>
+                  </td>
+                </tr>
+                <tr>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <div class="" style="width: 30px"></div>
+
+        <!-- TABLE: LATEST 8 -->
+        <div class="card-body p-0 w-50 bg-white">
+          <div
+            class="table-responsive shadow p-2 mb-2 bg-body-tertiary rounded"
+          >
+            <table class="table table-striped table8 table table-bordered m-0">
+              <thead>
+                <tr>
+                  <th style="width: 60%">Negara</th>
+                  <th style="width: 20%" colspan="2">
+                    Partisipasi <br /><i>Backward</i>
+                  </th>
+                  <th style="width: 20%" colspan="2">
+                    Partisipasi <br /><i>Foreward</i>
+                  </th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Indonesia</td>
+                  <td>456</td>
+                  <td style="width: 10%">
+                    <i class="fas fa-arrow-down text-red"></i>
+                  </td>
+                  <td>789</td>
+                  <td style="width: 10%">
+                    <i class="fas fa-arrow-down text-red"></i>
+                  </td>
+                </tr>
+                <tr>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+
+      <br />
+
+      <!-- Grafik Table (kasih berwarna danger PMI MANUFAKTUR S&P GLOBAL seperti donut chart) -->
+      <div class="card shadow">
+        <div class="card-header border-0 mb-1">
+          <div class="d-flex justify-content-center">
+            <h3 class="card-title text-bold">PMI MANUFAKTUR S&P GLOBAL</h3>
+          </div>
+        </div>
+        <div class="card-body">
+          <div class="d-flex">
+            <p class="d-flex flex-column"></p>
+            <p class="ml-auto d-flex flex-column text-right"></p>
+          </div>
+
+          <!--(Tengahin dan kurangin 19, garis dan nomornya di kiri, garis di panjangkan lagi)-->
+          <div class="row mb-2">
+            <div class="col-sm-1 col-10">
+              <div class="description-block border-right">
+                <span class="description-text text-sm">INDONESIA</span>
+              </div>
+            </div>
+            <div class="col-sm-1 col-10">
+              <div class="description-block border-right">
+                <span class="description-text text-sm">GLOBAL</span>
+              </div>
+            </div>
+            <div class="col-sm-1 col-10">
+              <div class="description-block border-right">
+                <span class="description-text text-sm">ASEAN</span>
+              </div>
+            </div>
+            <div class="col-sm-1 col-10">
+              <div class="description-block border-right">
+                <span class="description-text text-sm">MALAYSIA</span>
+              </div>
+            </div>
+            <div class="col-sm-1 col-10">
+              <div class="description-block border-right">
+                <span class="description-text text-sm">THAILAND</span>
+              </div>
+            </div>
+            <div class="col-sm-1 col-10">
+              <div class="description-block border-right">
+                <span class="description-text text-sm">VIETNAM</span>
+              </div>
+            </div>
+            <div class="col-sm-1 col-10">
+              <div class="description-block border-right">
+                <span class="description-text text-sm">PHILIPPINE</span>
+              </div>
+            </div>
+            <div class="col-sm-1 col-10">
+              <div class="description-block border-right">
+                <span class="description-text text-sm">CHINA</span>
+              </div>
+            </div>
+            <div class="col-sm-1 col-10">
+              <div class="description-block border-right">
+                <span class="description-text text-sm">INDIA</span>
+              </div>
+            </div>
+            <div class="col-sm-1 col-10">
+              <div class="description-block border-right">
+                <span class="description-text text-sm">UNI EROPA</span>
+              </div>
+            </div>
+            <div class="col-sm-1 col-10">
+              <div class="description-block border-right">
+                <span class="description-text text-sm">USA</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="d-flex flex-row justify-content-center">
+            <span class="mr-2">
+              <i class="fas fa-square text-primary"></i> Oct-23
+            </span>
+            <span class="mr-2">
+              <i class="fas fa-square text-red"></i> Nov-23
+            </span>
+            <span class="mr-2">
+              <i class="fas fa-square text-green"></i> Dec-23
+            </span>
+            <span class="mr-2">
+              <i class="fas fa-square text-purple"></i> Jan-24
+            </span>
+            <span class="mr-2">
+              <i class="fas fa-square text-pink"></i> Feb-24
+            </span>
+            <span class="mr-2">
+              <i class="fas fa-square text-orange"></i> Mar-24
+            </span>
+          </div>
+        </div>
+      </div>
+
+      <br />
+
+      <!--Sumber-->
+      <div class="mb-4 text-left">
+        <p class="text-start text-bold mb-1">Sumber:</p>
+        <i class="text-sm sumber"
+          ><a href="">Trading Economics</a>,
+          <a href="">IMD World Competitiveness Center</a>,
+          <a href="">World Bank</a>, <a href="">UNIDO</a>, <a href="">OECD</a>,
+          <a href="">S&P Global</a></i
+        >
+      </div>
+
+      <!-- /.content-wrapper footer/footer-->
+      <footer class="main-footer p-1">
+        <strong
+          >Copyright &copy; 2024
+          <a href="https://kemenperin.go.id">Kementerian Perindustrian</a
+          >.</strong
+        >
+        All rights reserved.
+        <div class="float-right d-none d-sm-inline-block">
+          <b>Version</b> 0.0
+        </div>
+      </footer>
+    </div>
+
+    <!-- jQuery -->
+    <script src="plugins/jquery/jquery.min.js"></script>
+    <!-- jQuery UI 1.11.4 -->
+    <script src="plugins/jquery-ui/jquery-ui.min.js"></script>
+    <!-- Resolve conflict in jQuery UI tooltip with Bootstrap tooltip -->
+    <script>
+      $.widget.bridge("uibutton", $.ui.button);
+    </script>
+    <!-- Bootstrap 4 -->
+    <script src="plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <!-- ChartJS -->
+    <script src="plugins/chart.js/Chart.min.js"></script>
+    <!-- Sparkline -->
+    <script src="plugins/sparklines/sparkline.js"></script>
+    <!-- JQVMap -->
+    <script src="plugins/jqvmap/jquery.vmap.min.js"></script>
+    <script src="plugins/jqvmap/maps/jquery.vmap.usa.js"></script>
+    <!-- jQuery Knob Chart -->
+    <script src="plugins/jquery-knob/jquery.knob.min.js"></script>
+    <!-- daterangepicker -->
+    <script src="plugins/moment/moment.min.js"></script>
+    <script src="plugins/daterangepicker/daterangepicker.js"></script>
+    <!-- Tempusdominus Bootstrap 4 -->
+    <script src="plugins/tempusdominus-bootstrap-4/js/tempusdominus-bootstrap-4.min.js"></script>
+    <!-- Summernote -->
+    <script src="plugins/summernote/summernote-bs4.min.js"></script>
+    <!-- overlayScrollbars -->
+    <script src="plugins/overlayScrollbars/js/jquery.overlayScrollbars.min.js"></script>
+    <!-- AdminLTE App -->
+    <script src="dist/js/adminlte.js"></script>
+    <!-- AdminLTE for demo purposes -->
+    <script src="dist/js/demo.js"></script>
+    <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
+    <script src="dist/js/pages/dashboard.js"></script>
+    <script src="app.js"></script>
+
+    <!-- uPlot -->
+    <!-- <script src="plugins/uplot/uPlot.iife.min.js"></script> -->
+    <!-- Page specific script -->
+    <!-- <script>
+      $(function () { -->
+        <!-- /* uPlot
+         * -------
+         * Here we will create a few charts using uPlot
+         */
+
+        function getSize(elementId) {
+          return {
+            width: document.getElementById(elementId).offsetWidth,
+            height: document.getElementById(elementId).offsetHeight,
+          };
+        }
+
+        let data = [
+          [0, 1, 2, 3, 4, 5, 6],
+          [28, 48, 40, 19, 86, 27, 90],
+          [65, 59, 80, 81, 56, 55, 40],
+        ];
+
+        //--------------
+        //- LINE CHART -
+        //--------------
+
+        const optsLineChart = {
+          ...getSize("lineChart"),
+          scales: {
+            x: {
+              time: false,
+            },
+            y: {
+              range: [0, 100],
+            },
+          },
+          series: [
+            {},
+            {
+              fill: "transparent",
+              width: 5,
+              stroke: "rgba(60,141,188,1)",
+            },
+            {
+              stroke: "#c1c7d1",
+              width: 5,
+              fill: "transparent",
+            },
+          ],
+        };
+
+        let lineChart = new uPlot(
+          optsLineChart,
+          data,
+          document.getElementById("lineChart")
+        );
+
+        window.addEventListener("resize", (e) => {
+          lineChart.setSize(getSize("lineChart"));
+        });
+      }); -->
+    </script>
+  </body>
+</html>
